@@ -11,4 +11,13 @@ PROMPT='%n $ '
 
 autoload -Uz compinit
 compinit
+
+alias ls="ls -lhFA"
+
+alias install="yay -S"
+alias update="yay -Syu"
+alias remove="yay -Rns"
+
+fastfetch
+
 # End of lines added by compinstall
