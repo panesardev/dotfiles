@@ -10,9 +10,9 @@
     "hyprland/workspaces",
   ],
   "modules-center": [
+    "memory",
     "cpu",
     "temperature",
-    "memory",
   ],
   "modules-right": [
     "pulseaudio",

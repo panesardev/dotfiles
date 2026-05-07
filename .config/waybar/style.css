@@ -14,19 +14,20 @@ window#waybar {
   background-color: rgba(255, 255, 255, 0.3);
   border: 1 rgba(255, 255, 255, 0.5) solid;
   border-radius: 100;
-  padding: 0 10;
+  padding: 0 12;
   margin: 0 5;
 }
 
 #workspaces {
-  padding: 0;
+  padding: 2;
 }
 
 #workspaces button {
-  padding: 0 15;
+  padding: 0 8;
   background: transparent;
   color: white;
   border-radius: 100;
+  border: none;
 }
 
 #workspaces button.active {
@@ -38,17 +39,12 @@ window#waybar {
 #workspaces button:hover {
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
-  border: 1 transparent solid;
 }
 
 #clock {
 }
 
 #battery {
-}
-
-#battery icon {
-  color: red;
 }
 
 #battery.charging {
