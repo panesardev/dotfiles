@@ -1,6 +1,6 @@
 * {
-  font-family: "lato", "Font Awesome 7 free";
-  font-weight: 500;
+  font-family: "lato", "Font Awesome 7 Free";
+  font-weight: 600;
   /* border: #c9545d 2px solid; */
 }
 
@@ -9,7 +9,7 @@ window#waybar {
   color: rgba(255, 255, 255, 0.9);
 }
 
-#workspaces, #clock, #battery, #cpu, #temperature, #memory, #network, #pulseaudio, #tray {
+#workspaces, #clock, #battery, #backlight, #cpu, #temperature, #memory, #network, #pulseaudio, #tray, #custom-power, #custom-launcher {
   color: white;
   background-color: rgba(255, 255, 255, 0.3);
   border: 1 rgba(255, 255, 255, 0.5) solid;
@@ -60,7 +60,7 @@ window#waybar {
 #battery.warning:not(.charging) {
   color: white;
   animation-name: blink;
-  animation-duration: 0.5s;
+  animation-duration: 500ms;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -76,7 +76,6 @@ window#waybar {
 }
 
 #network.disconnected {
-  background: #f53c3c;
 }
 
 #pulseaudio {
@@ -86,4 +85,8 @@ window#waybar {
 }
 
 #tray {
+}
+
+#custom-launcher {
+  font-weight: 400;
 }

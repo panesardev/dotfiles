@@ -6,20 +6,23 @@
   "fixed-center": true,
   
   "modules-left": [
+    "memory",
+    "temperature",
+    "cpu",
   ],
   
   "modules-center": [
+    "custom/launcher",
     "hyprland/workspaces",
-    "memory",
-    "cpu",
-    // "temperature",
-    "network",
+    "custom/power",
+  ],
+  
+  "modules-right": [
     "pulseaudio",
+    "backlight",
+    "network",
     "battery",
     "clock",
-  ],
-
-  "modules-right": [
   ],
 
   "hyprland/workspaces": {
@@ -38,7 +41,7 @@
     }
   },
   "clock": {
-    "format": "{:%I %M}"
+    "format": "{:%I %M %p}"
   },
   "cpu": {
     "format": "\uf2db  {usage}"
@@ -57,13 +60,13 @@
   "network": {
     "format-wifi": "\uf1eb  {essid}",
     "format-ethernet": "\uf796  {ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": "\uf06a  Disconnected"
+    "format-disconnected": "\uf00d  Disconnected"
   },
   "pulseaudio": {
     //"scroll-step": 1,
     "format": "{icon}  {volume}",
     "format-bluetooth": "{icon} \uf294  {volume}",
-    "format-muted": "\uf026",
+    "format-muted": "\uf6a9",
     "format-icons": {
       "headphone": "\uf025",
       "default": [
@@ -72,5 +75,21 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "device": "intel_backlight", 
+    "format": "\uf042  {percent}",
+    // "on-scroll-up": "brightnessctl s 1%+",
+    // "on-scroll-down": "brightnessctl s 1%-",
+  },
+  "custom/power": {
+    "format": "\uf011",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+  "custom/launcher": {
+    "format": "\ue867",
+    "on-click": "rofi -show drun",
+    "tooltip": false
   }
 }
