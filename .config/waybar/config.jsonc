@@ -6,6 +6,7 @@
   "fixed-center": true,
   
   "modules-left": [
+    "clock#date",
     "memory",
     "temperature",
     "cpu",
@@ -22,7 +23,7 @@
     "backlight",
     "network",
     "battery",
-    "clock",
+    "clock#time",
   ],
 
   "hyprland/workspaces": {
@@ -40,32 +41,37 @@
       "urgent": "\uf06a"
     }
   },
-  "clock": {
-    "format": "{:%I %M %p}"
+  "clock#time": {
+    "format": "{:%I %M}",
+    "interval": 1
+  },
+  "clock#date": {
+    "format": "{:%a %b %d}",
+    "interval": 60
   },
   "cpu": {
-    "format": "\uf2db  {usage}"
+    "format": "\uf2db {usage}"
   },
   "temperature": {
-    "format": "\uf769  {temperatureC}"
+    "format": "\uf769 {temperatureC}"
   },
   "memory": {
-    "format": "\uf538  {}",
+    "format": "\uf538 {}",
     "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
   },
   "battery": {
     "bat": "BAT0",
-    "format": "\uf242  {capacity}"
+    "format": "\uf242 {capacity}"
   },
   "network": {
-    "format-wifi": "\uf1eb  {essid}",
-    "format-ethernet": "\uf796  {ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": "\uf00d  Disconnected"
+    "format-wifi": "\uf1eb {essid}",
+    "format-ethernet": "\uf796 {ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "\uf00d Disconnected"
   },
   "pulseaudio": {
     //"scroll-step": 1,
-    "format": "{icon}  {volume}",
-    "format-bluetooth": "{icon} \uf294  {volume}",
+    "format": "{icon} {volume}",
+    "format-bluetooth": "{icon} \uf294 {volume}",
     "format-muted": "\uf6a9",
     "format-icons": {
       "headphone": "\uf025",
@@ -78,7 +84,7 @@
   },
   "backlight": {
     "device": "intel_backlight", 
-    "format": "\uf042  {percent}",
+    "format": "\uf042 {percent}",
     // "on-scroll-up": "brightnessctl s 1%+",
     // "on-scroll-down": "brightnessctl s 1%-",
   },
