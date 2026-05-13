@@ -1,93 +1,111 @@
+@import 'colors.css';
+
 * {
-  font-family: "SF Pro", "Font Awesome 7 Free";
+  font-family: "FiraCode Nerd Font Propo";
   font-weight: 500;
-  font-size: 12;
-  /* border: #c9545d 2px solid; */
-}
+  font-size: 13px;
+  /* border: red 1px solid; */
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  min-height: 0;
+} 
 
 window#waybar {
-  background: transparent;
+  background-color: transparent;
   color: rgba(255, 255, 255, 0.9);
 }
 
-#workspaces, #clock, #battery, #backlight, #cpu, #temperature, #memory, #network, #pulseaudio, #tray, #custom-power, #custom-launcher {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1 rgba(255, 255, 255, 0.5) solid;
-  border-radius: 100;
-  padding: 0 12;
-  margin: 0 5;
+#clock, 
+#battery, 
+#backlight, 
+#cpu, 
+#temperature, 
+#memory, 
+#network, 
+#pulseaudio {
+  color: @primary;
+  background-color: @background;
+  transition: background-color 300ms ease-in-out;
+  border-radius: 100px;
+  padding: 0px 12px;
+  margin: 0px 5px;
+}
+
+#clock:hover, 
+#battery:hover, 
+#backlight:hover, 
+#cpu:hover, 
+#temperature:hover, 
+#memory:hover, 
+#network:hover, 
+#pulseaudio:hover:hover, 
+#custom-power:hover, 
+#custom-launcher:hover {
+  background-color: @on_primary_fixed_variant;
+  transition: background-color 300ms ease-in-out;
+}
+
+#workspaces, 
+#custom-power, 
+#custom-launcher {
+  color: @primary;
+  background-color: @background;
+  /* border-radius: 100px; */
+  padding: 0px 14px;
+  transition: all 500ms ease
+  /* margin: 0px 5px; */
 }
 
 #workspaces {
-  padding: 2;
+  padding: 6px;
 }
 
 #workspaces button {
-  padding: 0 8;
-  background: transparent;
-  color: white;
-  border-radius: 100;
-  border: none;
+  padding: 0px 8px;
+  min-height: 0px;
+  min-width: 0px;
+  /* min-width: 30px; */
+  background: @inverse_primary;
+  color: @primary;
+  transition: all 100ms ease-in-out;
+  border-radius: 100px;
 }
 
-#workspaces button.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 0 15;
-  color: white;
+#workspaces button:not(:last-child) {
+  margin-right: 8px;
 }
 
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
+  background: @inverse_primary;
+  color: @primary;
 }
 
-#clock {
-}
 
-#battery {
-}
-
-#battery.charging {
-}
-
-@keyframes blink {
-  to {
-      background-color: #ffffff;
-      color: black;
-  }
-}
-
-#battery.warning:not(.charging) {
-  color: white;
-  animation-name: blink;
-  animation-duration: 500ms;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#cpu {
-}
-
-#memory {
-}
-
-#network {
-}
-
-#network.disconnected {
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
-
-#tray {
+#workspaces button.active, 
+#workspaces button:hover.active {
+  transition: all 100ms ease-in-out;
+  background: @primary;
+  color: @background;
+  /* padding: 0 20px; */
+  border-radius: 3px;
 }
 
 #custom-launcher {
-  font-weight: 400;
+  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+}
+
+
+#custom-power {
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+
+tooltip {
+  background-color: @background;
+  border-radius: 10px;
+  font-size: 10px;
+  color: @primary;
 }
