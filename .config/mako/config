@@ -1,2 +1,9 @@
+font=SF Pro Display Regular 12
+
+padding=15,20
+margin=10
+border-radius=6
+
+default-timeout=3000
 
 include=~/.config/mako/colors

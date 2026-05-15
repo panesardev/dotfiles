@@ -8,7 +8,6 @@ btop
 cmake
 cpio
 detox
-dunst
 efibootmgr
 fastfetch
 foot
@@ -33,6 +32,8 @@ linux
 linux-firmware
 ly
 mako
+man-db
+man-pages
 nano
 nano-syntax-highlighting
 nautilus
@@ -78,14 +79,15 @@ zram-generator
 zsh
 zsh-completions
 apple-fonts
+figma-linux
 google-chrome
 matugen-bin
 themix-full-git
 ttf-google-sans
 visual-studio-code-bin
 walker-bin
+waybar-media-git
 wayle-bin
 waypaper
-wlogout
 yay-bin
 yay-bin-debug

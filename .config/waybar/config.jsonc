@@ -42,9 +42,6 @@
       "9": "",
       "urgent": ""
     },
-    "presistent-workspaces": {
-      "*": 3
-    },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
@@ -112,7 +109,7 @@
   },
   "custom/power": {
     "format": "",
-    "on-click": "wlogout",
+    "on-click": "pkill rofi || ~/.config/rofi/powermenu/powermenu.sh",
     "tooltip": false
   },
   "custom/launcher": {
