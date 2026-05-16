@@ -18,6 +18,7 @@ alias install="yay -S"
 alias update="yay -Syu"
 alias remove="yay -Rns"
 
+
 fastfetch
 
 # End of lines added by compinstall

@@ -1,10 +1,6 @@
 [config]
 reload_gtk_theme = true
 
-[config.wallpaper]
-set = true
-command = "awww img --transition-type none {{ image }}"
-
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"

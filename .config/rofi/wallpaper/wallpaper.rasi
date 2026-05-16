@@ -36,7 +36,12 @@ window {
 }
 
 inputbar {
-  enabled: false;
+  spacing: 0px;
+  padding : 6px;
+  margin: 12px 12px 0px;
+  children : [ icon-search, entry ];
+  background-color: @on-primary;
+  border-radius: 100px;
 }
 
 icon-search, entry, element-icon, element-text {
