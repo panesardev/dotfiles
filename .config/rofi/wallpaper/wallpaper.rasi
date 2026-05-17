@@ -1,19 +1,9 @@
 @import "colors.rasi"
 
 * {
-  font:   "FiraCode Nerd Font Mono Regular 12";
-
-  bg1     : @surface;
-  fg0     : @inverse-surface;
-  red     : @error;
-  blue    : @primary;
-
-  accent: @blue;
-  urgent: @red;
-
-  background-color : transparent;
-  text-color       : @fg0;
-
+  font:   "SF Pro Display Regular 12";
+  background-color: transparent;
+  text-color: @inverse-surface;
   margin  : 0;
   padding : 0;
   spacing : 0;
@@ -24,88 +14,54 @@ element-icon, element-text, scrollbar {
 }
 
 window {
-  location : center;
-  width    : 350px;
+  location: center;
+  width: 300px;
+  padding: 16px;
   x-offset : 0px;
   y-offset : 0px;
-
-  background-color: @bg1;
+  background-color: @surface;
   border: 2px;
-  border-color: @accent;
+  border-color: @primary;
   border-radius: 6px;
 }
 
 inputbar {
-  spacing: 0px;
-  padding : 6px;
-  margin: 12px 12px 0px;
-  children : [ icon-search, entry ];
+  padding : 8px 12px;
+  margin: 0px 0px 8px;
   background-color: @on-primary;
   border-radius: 100px;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
-}
-
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
-}
-
 textbox {
-  padding          : 4px 8px;
-  background-color : @bg1;
+  padding: 4px 8px;
+  background-color: @on-primary-fixed;
 }
 
 listview {
-  padding      : 4px 0px;
-  margin       : 12px;
-  lines        : 12;
+  padding      : 0px;
+  lines        : 10;
   columns      : 1;
-  scrollbar    : true;
+  scrollbar    : false;
   fixed-height : false;
   dynamic      : true;
 }
 
 element {
-  padding : 6px 12px;
-  spacing : 8px;
+  padding: 8px 16px;
+  spacing: 16px;
   border-radius: 100px;
 }
 
-element normal urgent {
-  text-color: @urgent;
-}
-
-element normal active {
-  text-color: @accent;
-}
-
-element alternate active {
-  text-color: @accent;
-}
-
 element selected {
-  text-color       : @bg1;
-  background-color : @blue;
-}
-
-element selected urgent {
-  background-color: @urgent;
+  text-color       : @on-primary;
+  border: 2px;
+  background-color: @primary;
 }
 
 element-icon {
   size: 1em;
-  margin: 0px 12px 0px 0px;
 }
 
 element-text {
   text-color: inherit;
-}
-
-scrollbar {
-  handle-width : 0px;
-  padding      : 0px;
 }

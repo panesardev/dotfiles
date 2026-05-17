@@ -26,6 +26,7 @@ element-icon, element-text, scrollbar {
 window {
   location : center;
   width    : 350px;
+  padding: 16px;
   x-offset : 0px;
   y-offset : 0px;
 
@@ -37,8 +38,8 @@ window {
 
 inputbar {
   spacing: 0px;
-  padding : 6px;
-  margin: 12px;
+  padding : 8px;
+  margin: 0px 0px 8px;
   children : [ icon-search, entry ];
   background-color: @on-primary;
   border-radius: 100px;
@@ -61,8 +62,7 @@ textbox {
 
 listview {
   padding      : 4px 0px;
-  margin       : 0px 12px 12px;
-  lines        : 12;
+  lines        : 10;
   columns      : 1;
   scrollbar    : true;
   fixed-height : false;
@@ -70,26 +70,14 @@ listview {
 }
 
 element {
-  padding : 6px 12px;
-  spacing : 8px;
+  padding : 8px 16px;
+  spacing: 4px;
   border-radius: 100px;
 }
 
-element normal urgent {
-  text-color: @urgent;
-}
-
-element normal active {
-  text-color: @accent;
-}
-
-element alternate active {
-  text-color: @accent;
-}
-
 element selected {
-  text-color       : @bg1;
-  background-color : @blue;
+  text-color       : @on-primary;
+  background-color : @primary;
 }
 
 element selected urgent {

@@ -9,7 +9,6 @@ HIBERNATE=" Hibernate"
 LOGOUT=" Logout"
 REBOOT=" Reboot"
 SHUTDOWN=" Shutdown"
-CLOSE=" Close"
  
 chosen=$(printf '%s\n' \
   "$LOCK" \
@@ -18,8 +17,7 @@ chosen=$(printf '%s\n' \
   "$LOGOUT" \
   "$REBOOT" \
   "$SHUTDOWN" \
-  "$CLOSE" \
-  | rofi -dmenu -theme "$THEME" -p "")
+  | rofi -dmenu -theme "$THEME")
  
 case "$chosen" in
   "$LOCK")      loginctl lock-session ;;
@@ -28,6 +26,5 @@ case "$chosen" in
   "$LOGOUT")    hyprctl dispatch exit 0 ;;
   "$REBOOT")    systemctl reboot ;;
   "$SHUTDOWN")  systemctl poweroff ;;
-  "$Close")  exit ;;
 esac
  

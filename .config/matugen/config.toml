@@ -1,6 +1,11 @@
 [config]
 reload_gtk_theme = true
 
+[templates.hyrpland]
+input_path = "~/.config/matugen/templates/hypr.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = 'hyprctl reload'
+
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"

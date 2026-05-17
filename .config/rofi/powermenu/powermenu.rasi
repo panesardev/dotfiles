@@ -1,37 +1,28 @@
 @import "colors.rasi"
 
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
 * {
-  font:   "FiraCode Nerd Font Mono Regular 12";
-
-  bg1     : @surface;
-  fg0     : @inverse-surface;
-  red     : @error;
-  blue    : @primary;
-
-  accent: @blue;
-  urgent: @red;
-
-  background-color : transparent;
-  text-color       : @fg0;
-
+  font: "FiraCode Nerd Font Mono Regular 12";
+  background-color: transparent;
+  text-color: @inverse-surface;
   margin  : 0;
   padding : 0;
   spacing : 0;
 }
 
-element-icon, element-text, scrollbar {
-  cursor: pointer;
-}
-
 window {
-  location : center;
-  width    : 350px;
-  x-offset : 0px;
-  y-offset : 0px;
-
-  background-color: @bg1;
+  location: center;
+  width: 200px;
+  padding: 16px;
+  x-offset: 0px;
+  y-offset: 0px;
+  background-color: @surface;
   border: 2px;
-  border-color: @accent;
+  border-color: @primary;
   border-radius: 6px;
 }
 
@@ -39,68 +30,28 @@ inputbar {
   enabled: false;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
-}
-
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
-}
-
-textbox {
-  padding          : 4px 8px;
-  background-color : @bg1;
-}
-
 listview {
-  padding      : 4px 0px;
-  margin       : 12px;
-  lines        : 12;
+  lines        : 6;
   columns      : 1;
-  scrollbar    : true;
+  scrollbar    : false;
   fixed-height : false;
   dynamic      : true;
 }
 
 element {
-  padding : 6px 12px;
-  spacing : 8px;
+  padding: 8px;
   border-radius: 100px;
 }
 
-element normal urgent {
-  text-color: @urgent;
-}
-
-element normal active {
-  text-color: @accent;
-}
-
-element alternate active {
-  text-color: @accent;
-}
-
 element selected {
-  text-color       : @bg1;
-  background-color : @blue;
-}
-
-element selected urgent {
-  background-color: @urgent;
-}
-
-element-icon {
-  size: 1em;
-  margin: 0px 12px 0px 0px;
+  text-color: @on-primary;
+  background-color: @primary;
 }
 
 element-text {
   text-color: inherit;
 }
 
-scrollbar {
-  handle-width : 0px;
-  padding      : 0px;
+element-icon, element-text, scrollbar {
+  cursor: pointer;
 }

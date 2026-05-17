@@ -2,4 +2,5 @@
 
 configuration {
   case-sensitive: false;
+  show-icons: true;
 }
