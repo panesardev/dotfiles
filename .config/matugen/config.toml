@@ -6,6 +6,16 @@ input_path = "~/.config/matugen/templates/hypr.conf"
 output_path = "~/.config/hypr/colors.conf"
 post_hook = 'hyprctl reload'
 
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '~/.config/matugen/scripts/gtk-themes-reload.sh'
+
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"
@@ -29,3 +39,7 @@ post_hook = "makoctl reload"
 input_path = "~/.config/matugen/templates/btop.theme"
 output_path = "~/.config/btop/themes/matugen.theme"
 post_hook = "pkill -USR2 btop || true"
+
+[templates.swayosd]
+input_path = "~/.config/matugen/templates/swayosd.css"
+output_path = "~/.config/swayosd/colors.css"

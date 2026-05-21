@@ -6,10 +6,12 @@ bluez-utils
 brightnessctl
 btop
 cmake
+cmatrix
 cpio
 detox
 efibootmgr
 fastfetch
+flatpak
 foot
 gcc
 git
@@ -43,6 +45,7 @@ noto-fonts
 noto-fonts-emoji
 nwg-look
 otf-font-awesome
+papirus-icon-theme
 pavucontrol
 pipewire
 pipewire-alsa
@@ -58,6 +61,7 @@ slurp
 smartmontools
 stow
 sudo
+tela-circle-icon-theme-all
 tree
 ttf-dejavu
 ttf-firacode-nerd
@@ -70,7 +74,7 @@ vulkan-intel
 waybar
 wget
 wireplumber
-wofi
+wl-clip-persist
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-utils

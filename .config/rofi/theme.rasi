@@ -1,22 +1,12 @@
 @import "colors.rasi"
 
 * {
-  font:   "Google Sans Regular 12";
-
-  bg1     : @surface;
-  fg0     : @inverse-surface;
-  red     : @error;
-  blue    : @primary;
-
-  accent: @blue;
-  urgent: @red;
-
-  background-color : transparent;
-  text-color       : @fg0;
-
-  margin  : 0;
-  padding : 0;
-  spacing : 0;
+  font: "Google Sans Regular 12";
+  background-color: transparent;
+  text-color: @inverse-surface;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
 }
 
 element-icon, element-text, scrollbar {
@@ -25,46 +15,41 @@ element-icon, element-text, scrollbar {
 
 window {
   location : center;
-  width    : 350px;
+  width    : 360px;
   padding: 16px;
   x-offset : 0px;
   y-offset : 0px;
-
-  background-color: @bg1;
+  background-color: @surface;
   border: 2px;
-  border-color: @accent;
-  border-radius: 6px;
+  border-color: @primary;
+  border-radius: 8px;
 }
 
 inputbar {
-  spacing: 0px;
-  padding : 8px;
-  margin: 0px 0px 8px;
-  children : [ icon-search, entry ];
+  padding : 8px 16px;
+  margin: 0px 0px 12px;
+  children : [ prompt, entry ];
   background-color: @on-primary;
   border-radius: 100px;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
+prompt {
+
 }
 
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
+entry, element-icon, element-text {
+  vertical-align: 0.5;
 }
 
 textbox {
   padding          : 4px 8px;
-  background-color : @bg1;
+  background-color : @surface;
 }
 
 listview {
-  padding      : 4px 0px;
-  lines        : 10;
+  lines        : 8;
   columns      : 1;
-  scrollbar    : true;
+  scrollbar    : false;
   fixed-height : false;
   dynamic      : true;
 }
@@ -81,7 +66,7 @@ element selected {
 }
 
 element selected urgent {
-  background-color: @urgent;
+  background-color: @error;
 }
 
 element-icon {

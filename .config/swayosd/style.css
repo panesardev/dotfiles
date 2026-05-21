@@ -1,0 +1,57 @@
+@import 'colors.css';
+
+* {
+  font-size: 14px;
+}
+
+window#osd {
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+#container {
+  background-color: @background;
+  border: 2px @primary solid; 
+  border-radius: 100px;
+  padding: 6px 12px;
+  color: @primary;
+}
+
+image,
+label {
+  color: @primary;
+  -gtk-icon-transform: scale(0.65);
+}
+
+progressbar,
+segmentedprogress {
+  min-height: 4px;
+  border-radius: 100px;
+  background: transparent;
+  border: none;
+}
+
+trough,
+segment {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: alpha(@primary, 0.5);
+}
+
+progress,
+segment.active {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: @primary;
+}
+
+segment {
+  margin-left: 0px;
+}
+
+segment:first-child {
+  margin-left: 0px;
+}
+

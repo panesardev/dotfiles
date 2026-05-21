@@ -1,7 +1,8 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 20,
+  "height": 10,
+  "margin": 6,
   "fixed-center": true,
   
   "modules-left": [
@@ -13,8 +14,9 @@
   ],
   
   "modules-center": [
-    // "custom/launcher",
-    "hyprland/workspaces"
+    "custom/launcher",
+    "hyprland/workspaces",
+    "custom/power",
   ],
   
   "modules-right": [
@@ -22,7 +24,6 @@
     "backlight",
     "network",
     "battery",
-    "custom/power",
   ],
 
   "hyprland/workspaces": {

@@ -7,7 +7,12 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/rxcode/.zshrc'
 
-PROMPT='%n $ '
+PROMPT='
+|> '
+# PROMPT='
+# %F{cyan}%~%f 
+# |> '
+
 
 autoload -Uz compinit
 compinit
@@ -17,6 +22,8 @@ alias ls="ls -lhFA"
 alias install="yay -S"
 alias update="yay -Syu"
 alias remove="yay -Rns"
+alias search="yay -Ss"
+alias list="pacman -Qqe"
 
 
 fastfetch

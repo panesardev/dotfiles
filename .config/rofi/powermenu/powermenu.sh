@@ -1,30 +1,29 @@
 #!/usr/bin/env bash
 
-# THEME="$HOME/.config/rofi/theme.rasi"
-THEME="$HOME/.config/rofi/powermenu/powermenu.rasi"
+theme_str='* { font: "FiraCode Nerd Font Mono Regular 12"; } window { width: 200px; } inputbar { enabled: false; }'
 
-LOCK=" Lock"
-SUSPEND=" Suspend"
-HIBERNATE=" Hibernate"
-LOGOUT=" Logout"
-REBOOT=" Reboot"
-SHUTDOWN=" Shutdown"
+lock=" Lock"
+sleep=" Sleep"
+hibernate=" Hibernate"
+logout=" Logout"
+reboot=" Reboot"
+shutdown=" Shutdown"
  
-chosen=$(printf '%s\n' \
-  "$LOCK" \
-  "$SUSPEND" \
-  "$HIBERNATE" \
-  "$LOGOUT" \
-  "$REBOOT" \
-  "$SHUTDOWN" \
-  | rofi -dmenu -theme "$THEME")
+input=$(printf '%s\n' \
+  "$lock" \
+  "$sleep" \
+  "$hibernate" \
+  "$logout" \
+  "$reboot" \
+  "$shutdown" \
+  | rofi -dmenu -theme-str "$theme_str")
  
-case "$chosen" in
-  "$LOCK")      loginctl lock-session ;;
-  "$SUSPEND")   systemctl suspend ;;
-  "$HIBERNATE") systemctl hibernate ;;
-  "$LOGOUT")    hyprctl dispatch exit 0 ;;
-  "$REBOOT")    systemctl reboot ;;
-  "$SHUTDOWN")  systemctl poweroff ;;
+case "$input" in
+  "$lock")      loginctl lock-session ;;
+  "$sleep")   systemctl suspend ;;
+  "$hibernate") systemctl hibernate ;;
+  "$logout")    hyprctl dispatch exit 0 ;;
+  "$reboot")    systemctl reboot ;;
+  "$shutdown")  systemctl poweroff ;;
 esac
  
