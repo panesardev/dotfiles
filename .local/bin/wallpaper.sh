@@ -19,7 +19,7 @@ mode=$(
 
 # generate and select hex color from wallpaper
 hex=$(
-  python3 ~/.config/rofi/wallpaper/generate-colors.py "$image" |
+  python3 ~/.local/bin/generate-colors.py "$image" |
   while read -r line; do echo -en "<span foreground='$line' background='$line'>  </span> $line\n"; done | 
   rofi -dmenu -markup-rows -i -p "" -theme-str 'window { width: 200px; } inputbar { enabled: false; }' |
   tail -c 8 # last 7 characters

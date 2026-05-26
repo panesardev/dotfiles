@@ -7,9 +7,9 @@
   "modules-left": [
     "custom/launcher",
     "clock",
-    "cpu",
+    "memory",
     // "temperature",
-    "memory"
+    "cpu"
   ],
   
   "modules-center": [

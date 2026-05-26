@@ -54,7 +54,7 @@ def main():
     img = Image.open(path).convert("RGB")
     # downsample for speed
     img.thumbnail((150, 150), Image.LANCZOS)
-    pixels = list(img.getdata())
+    pixels = list(img.get_flattened_data())
 
     # filter near-black and near-white
     filtered = [

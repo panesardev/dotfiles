@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "clear" ]; then
+if [[ "$1" == "clear" ]]; then
   echo -e "Clear Clipboard\nCancel" | 
   rofi -dmenu -theme-str "inputbar { enabled: false; }" | 
   grep -q "Clear History" && cliphist wipe
