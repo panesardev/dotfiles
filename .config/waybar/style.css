@@ -11,38 +11,39 @@ window#waybar {
   background-color: @background;
 }
 
-#clock, 
 #battery, 
 #backlight, 
+#bluetooth, 
 #cpu, 
-#temperature, 
+#clock,
 #memory, 
 #network, 
-#pulseaudio {
+#pulseaudio, 
+#temperature, 
+#custom-power, 
+#custom-launcher {
   color: @primary;
-  /* background-color: @background; */
   background-color: transparent;
   transition: background-color 300ms ease-in-out;
-  /* border-radius: 100; */
   padding: 0 12;
-  /* margin: 0 5; */
 }
 
-#clock:hover, 
 #battery:hover, 
 #backlight:hover, 
+#bluetooth:hover, 
+#clock:hover, 
 #cpu:hover, 
 #temperature:hover, 
 #memory:hover, 
 #network:hover, 
-#pulseaudio:hover:hover {
+#pulseaudio:hover:hover, 
+#custom-power:hover, 
+#custom-launcher:hover {
   background-color: @on_primary_fixed_variant;
   transition: background-color 100ms ease-in-out;
 }
 
-#workspaces, 
-#custom-power, 
-#custom-launcher {
+#workspaces {
   color: @primary;
   background-color: @background;
   padding: 0 14;
@@ -72,6 +73,10 @@ window#waybar {
 #workspaces button:hover.active {
   background: @primary;
   color: @background;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
 }
 
 #custom-launcher {

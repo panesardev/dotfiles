@@ -5,65 +5,36 @@
   "fixed-center": true,
   
   "modules-left": [
-    "clock#time",
-    "clock#date",
-    // "cpu",
+    "custom/launcher",
+    "clock",
+    "cpu",
     // "temperature",
-    "memory",
+    "memory"
   ],
   
   "modules-center": [
-    // "custom/launcher",
     "hyprland/workspaces"
   ],
   
   "modules-right": [
     "pulseaudio",
-    "backlight",
-    "network",
+    // "backlight",
     "battery",
-    "custom/power",
+    "network",
+    "bluetooth",
+    "custom/power"
   ],
 
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "urgent": ""
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
-  },
-  "clock#time": {
-    "format": "{:%I:%M}",
-    "interval": 1,
-    "tooltip-format": "<big>{:%Y %B}</big>"
+  // === MODULES alphabetically ===
 
+  "backlight": {
+    "device": "intel_backlight", 
+    "format": "{icon} {percent}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "tooltip": true,
+    "tooltip-format": "Brightness"
   },
-  "clock#date": {
-    "format": "{:%a %d}",
-    "interval": 60,
-    "tooltip-format":"<tt>{calendar}</tt>"
-  },
-  "cpu": {
-    "format": " {usage}"
-  },
-  "temperature": {
-    "format": " {temperatureC}"
-  },
-  "memory": {
-    "format": " {}",
-    "on-click": "kitty --hold btop",
-    "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
-  },
+  
   "battery": {
     "format-icons": ["", "", "", "", ""],
     "format": "{icon} {capacity}",
@@ -71,18 +42,91 @@
     "format-plugged": "{icon} {capacity} ",
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 10
     }
   },
-  "network": {
-    "format-wifi": "󰤢 {essid}",
-    "format-ethernet": "󰈁 {ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": "󰣷 Disconnected"
+  
+  "bluetooth": {
+      "format": "󰂯",
+      "format-off": "󰂲",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂯 Connected",
+      "tooltip-format": "󰂯 Status: {status}\n  Alias: {controller_alias}\n  Address: {controller_address}",
+      "tooltip-format-connected": "󰂯  Status: {status}\n  Alias: {controller_alias}\n  Address: {controller_address}\n󰾰  Devices: {device_enumerate}",
+      "tooltip-format-enumerate-connected": "󰂯  Status: {status}\n  Device: {device_alias} | {device_address}",
+      // "on-click": "[[ $(bluetoothctl show | awk -F': ' '/PowerState/ {print $2}') == 'off' ]] && bluetoothctl power on &>/dev/null || bluetoothctl power off &>/dev/null"
+      "on-click": "overskride"
   },
+  
+  "clock": {
+    "format": "{:%I:%M}",
+    "format-alt": "{:%A, %B %d}",
+    "tooltip-format": "<big>{:%d}</big> <big>{calendar}</big>"
+  },
+
+  "clock#time": {
+    "format": "{:%I:%M}",
+    "interval": 1,
+    "tooltip-format": "<big>{:%a %d}</big> <big>{calendar}</big>"
+  },
+  
+  "clock#date": {
+    "format": "{:%a %d}",
+    "interval": 60,
+    "tooltip-format":"<tt>{calendar}</tt>"
+  },
+  
+  "cpu": {
+    "format": " {usage}"
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "pkill rofi || ~/.config/rofi/powermenu/powermenu.sh",
+    "on-click-right": "killall waybar; waybar", // refresh waybar
+    "tooltip": false
+  },
+  
+  "custom/launcher": {
+    "format": "",
+    "on-click": "pkill rofi || ~/.config/rofi/launcher/launcher.sh",
+    "tooltip": false
+  },
+  
+  "hyprland/workspaces": {
+    "format": "",
+    "format-icons": {
+      "default": "",
+      "active": "",
+      "urgent": ""
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  
+  "memory": {
+    "format": " {}",
+    "on-click": "kitty --hold btop",
+    "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
+  },
+
+  "network": {
+    "format-disconnected": "󰤮",
+    // "format-ethernet": "󰈁 {ifname}: {ipaddr}/{cidr}",
+    "format-ethernet": "󰈀",
+    // "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤟", "󰤢", "󰤥"], // Wifi strength icons
+    "tooltip-format": "<big>󰤥  <b>Network:</b> <span color='#a8c5da'>{essid}</span>\n󰈀  <b>Interface:</b> <span color='#a8c5da'>{ifname}</span>\n  <b>Download:</b> <span color='#a8c5da'>{bandwidthDownBytes}</span>\n  <b>Upload:</b> <span color='#a8c5da'>{bandwidthUpBytes}</span>\n󰩟  <b>IP:</b> <span color='#a8c5da'>{ipaddr}</span></big>",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 10,
+    "on-click": "wifi-manager --toggle"
+  },
+
   "pulseaudio": {
     //"scroll-step": 1,
     "format": "{icon} {volume}",
-    "format-bluetooth": "{icon} \uf294 {volume}",
+    "format-bluetooth": "{icon} {volume}",
     "format-muted": "",
     "format-icons": {
       "headphone": "",
@@ -97,21 +141,8 @@
     },
     "on-click": "pavucontrol"
   },
-  "backlight": {
-    "device": "intel_backlight", 
-    "format": "{icon} {percent}",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "tooltip": true,
-    "tooltip-format": "Brightness"
-  },
-  "custom/power": {
-    "format": "",
-    "on-click": "pkill rofi || ~/.config/rofi/powermenu/powermenu.sh",
-    "tooltip": false
-  },
-  "custom/launcher": {
-    "format": "",
-    "on-click": "rofi -show drun",
-    "tooltip": false
+  
+  "temperature": {
+    "format": " {temperatureC}"
   }
 }

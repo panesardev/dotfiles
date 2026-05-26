@@ -43,3 +43,7 @@ post_hook = "pkill -USR2 btop || true"
 [templates.swayosd]
 input_path = "~/.config/matugen/templates/swayosd.css"
 output_path = "~/.config/swayosd/colors.css"
+
+[templates.wifi-manager]
+input_path = "~/.config/matugen/templates/wifi-manager.css"
+output_path = "~/.config/wifi-manager/colors.css"

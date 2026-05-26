@@ -28,13 +28,14 @@ window {
 inputbar {
   padding : 8px 16px;
   margin: 0px 0px 12px;
-  children : [ prompt, entry ];
+  /* children : [ prompt, entry ]; */
+  children : [ entry ];
   background-color: @on-primary;
   border-radius: 100px;
 }
 
 prompt {
-
+  padding: 0px 8px 0px 0px;
 }
 
 entry, element-icon, element-text {

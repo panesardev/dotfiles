@@ -9,10 +9,12 @@ websites=(
   "fontawesome.com/search"
   "fonts.google.com"
   "github.com"
-  "gmail.com"  
+  "gmail.com"
+  "hex color picker"  
   "keep.google.com"
   "music.youtube.com"
   "nerdfonts.com/cheat-sheet"
+  "reddit.com"
   "vercel.com"
   "youtube.com"
 )

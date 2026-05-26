@@ -13,7 +13,6 @@ PROMPT='
 # %F{cyan}%~%f 
 # |> '
 
-
 autoload -Uz compinit
 compinit
 
