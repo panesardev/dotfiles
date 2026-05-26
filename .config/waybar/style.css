@@ -4,11 +4,11 @@
   all: unset;
   font-family: "FiraCode Nerd Font Propo";
   font-weight: 500;
-  /* font-size: 13; */
 }
 
 window#waybar {
   background-color: @background;
+  /* font-size: 13; */
 }
 
 #battery, 
@@ -88,7 +88,7 @@ window#waybar {
 #custom-power {
   /* border-bottom-right-radius: 100;
   border-top-right-radius: 100; */
-  font-size: 15px;
+  font-size: 13px;
 }
 
 tooltip {

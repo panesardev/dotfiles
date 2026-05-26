@@ -21,7 +21,7 @@
     // "backlight",
     "battery",
     "network",
-    "bluetooth",
+    // "bluetooth",
     "custom/power"
   ],
 
@@ -37,13 +37,14 @@
   
   "battery": {
     "format-icons": ["", "", "", "", ""],
-    "format": "{icon} {capacity}",
-    "format-charging": "{icon} {capacity} 󱐋",
-    "format-plugged": "{icon} {capacity} ",
+    "format": "{icon}",
+    "format-charging": "{icon} 󱐋",
+    "format-plugged": "{icon} ",
     "states": {
       "warning": 30,
       "critical": 10
-    }
+    },
+    "tooltip-format": "<big>{timeTo}\nCapacity: {capacity}%\nPower: {power}W</big>"
   },
   
   "bluetooth": {
@@ -77,22 +78,24 @@
   },
   
   "cpu": {
-    "format": " {usage}"
+    // "format": " {usage}"
+    "format": "cpu {usage}"
   },
 
   "custom/power": {
     "format": "",
-    "on-click": "pkill rofi || ~/.config/rofi/powermenu/powermenu.sh",
+    "on-click": "~/.local/bin/powermenu.sh",
     "on-click-right": "killall waybar; waybar", // refresh waybar
     "tooltip": false
   },
   
   "custom/launcher": {
     "format": "",
-    "on-click": "pkill rofi || ~/.config/rofi/launcher/launcher.sh",
+    "on-click": "~/.local/bin/launcher.sh",
+    "on-click-right": "~/.local/bin/wallpaper.sh",
     "tooltip": false
   },
-  
+
   "hyprland/workspaces": {
     "format": "",
     "format-icons": {
@@ -105,7 +108,8 @@
   },
   
   "memory": {
-    "format": " {}",
+    // "format": " {}",
+    "format": "ram {}",
     "on-click": "kitty --hold btop",
     "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
   },
@@ -124,9 +128,10 @@
   },
 
   "pulseaudio": {
-    //"scroll-step": 1,
-    "format": "{icon} {volume}",
-    "format-bluetooth": "{icon} {volume}",
+    // "format": "{icon} {volume}",
+    // "format-bluetooth": "{icon} {volume}",
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
     "format-muted": "",
     "format-icons": {
       "headphone": "",
@@ -143,6 +148,7 @@
   },
   
   "temperature": {
-    "format": " {temperatureC}"
+    // "format": " {temperatureC}"
+    "format": "temp {temperatureC}"
   }
 }

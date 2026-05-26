@@ -16,14 +16,18 @@ PROMPT='
 autoload -Uz compinit
 compinit
 
+# Aliases -----------------------------------------
+alias reload='source ~/.zshrc && echo "zsh reloaded"'
+
 alias ls="ls -lhFA"
 
 alias install="yay -S"
 alias update="yay -Syu"
 alias remove="yay -Rns"
 alias search="yay -Ss"
-alias list="pacman -Qqe"
+alias list="yay -Qqe"
 
+# Aliases -----------------------------------------
 
 fastfetch
 
