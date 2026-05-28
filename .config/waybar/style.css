@@ -8,7 +8,6 @@
 
 window#waybar {
   background-color: @background;
-  /* font-size: 13; */
 }
 
 #battery, 
@@ -93,7 +92,7 @@ window#waybar {
 
 tooltip {
   background-color: @background;
-  border-radius: 10;
-  font-size: 10;
   color: @primary;
+  border-radius: 10px;
+  font-size: 12px;
 }

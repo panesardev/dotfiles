@@ -42,39 +42,69 @@
 
 /* ── Main Panel ──────────────────────────────────────────────────────────── */
 
-/* .wifi-panel {
-  background: rgba(30, 30, 46, 0.95);
-  border-radius: 14px;
-  border: 1px solid rgba(180, 190, 254, 0.12);
-} */
+.wifi-panel {
+  background: @background;
+  border-radius: 8px;
+  border: 2px solid @primary;
+}
 
 /* ── Header ──────────────────────────────────────────────────────────────── */
 
-/* .header {
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(180, 190, 254, 0.06);
-} */
+.header-separator {
+  background-color: transparent;
+  margin: 0;
+}
 
-/* .status-label {
-  color: rgba(205, 214, 244, 0.9);
+.header {
+  padding: 16px;
+  border-bottom: 2px solid @background;
+  color: @primary;
+}
+
+.header-title {
+  color: @primary;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.status-label {
+  color: alpha(@on_background, .8);
   font-size: 13px;
-} */
+}
 
-/* .scan-button {
-  background: rgba(180, 190, 254, 0.08);
-  color: rgba(180, 190, 254, 0.8);
+.scan-button {
+  background: alpha(@surface_container, 1);
+  color: @primary;
   border-radius: 8px;
-} */
+}
 
-/* .wifi-toggle {
+.scan-button:hover {
+  background: alpha(@on_primary, 1);
+}
+
+.wifi-toggle {
+  background: @primary;
   margin-right: 8px;
-} */
+}
+
+switch:checked {
+  background: @primary;
+}
+
+switch slider {
+  min-width: 18px;
+  min-height: 18px;
+  margin: 2px;
+  border-radius: 999px;
+  background: @background;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
 
 /* ── Loading ─────────────────────────────────────────────────────────────── */
 
-/* .loading-spinner {
-  color: rgba(137, 180, 250, 0.8);
-} */
+.loading-spinner {
+  color: @primary;
+}
 
 /* ── Network List & Scrollbar ────────────────────────────────────────────── */
 
@@ -82,11 +112,11 @@
   background: transparent;
 } */
 
-/* .network-scroll scrollbar slider {
-  background: rgba(180, 190, 254, 0.1);
+.network-scroll scrollbar slider {
+  background: rgba(255, 255, 255, 0);
   border-radius: 99px;
-  min-width: 4px;
-} */
+  min-width: 0px;
+}
 
 /* ── Network Rows ────────────────────────────────────────────────────────── */
 

@@ -44,7 +44,7 @@
       "warning": 30,
       "critical": 10
     },
-    "tooltip-format": "<big>{timeTo}\nCapacity: {capacity}%\nPower: {power}W</big>"
+    "tooltip-format": "{timeTo}\nCapacity: {capacity}%\nPower: {power}W"
   },
   
   "bluetooth": {
@@ -62,13 +62,13 @@
   "clock": {
     "format": "{:%I:%M}",
     "format-alt": "{:%A, %B %d}",
-    "tooltip-format": "<big>{:%d}</big> <big>{calendar}</big>"
+    "tooltip-format": "{:%d} {calendar}"
   },
 
   "clock#time": {
     "format": "{:%I:%M}",
     "interval": 1,
-    "tooltip-format": "<big>{:%a %d}</big> <big>{calendar}</big>"
+    "tooltip-format": "{:%a %d} {calendar}"
   },
   
   "clock#date": {
@@ -111,7 +111,7 @@
     // "format": " {}",
     "format": "ram {}",
     "on-click": "kitty --hold btop",
-    "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
+    "tooltip-format": "{used:0.1f}/{total:0.1f}"
   },
 
   "network": {
@@ -121,7 +121,7 @@
     // "format-wifi": "{icon} {essid}",
     "format-wifi": "{icon}",
     "format-icons": ["󰤟", "󰤢", "󰤥"], // Wifi strength icons
-    "tooltip-format": "<big>󰤥  <b>Network:</b> <span color='#a8c5da'>{essid}</span>\n󰈀  <b>Interface:</b> <span color='#a8c5da'>{ifname}</span>\n  <b>Download:</b> <span color='#a8c5da'>{bandwidthDownBytes}</span>\n  <b>Upload:</b> <span color='#a8c5da'>{bandwidthUpBytes}</span>\n󰩟  <b>IP:</b> <span color='#a8c5da'>{ipaddr}</span></big>",
+    "tooltip-format": "󰤥  Network: <span color='#a8c5da'>{essid}</span>\n󰈀  Interface: <span color='#a8c5da'>{ifname}</span>\n  Download: <span color='#a8c5da'>{bandwidthDownBytes}</span>\n  Upload: <span color='#a8c5da'>{bandwidthUpBytes}</span>\n󰩟  IP: <span color='#a8c5da'>{ipaddr}</span>",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 10,
     "on-click": "wifi-manager --toggle"
